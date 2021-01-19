@@ -34,6 +34,14 @@ defmodule FetchRadikoSongXml do
   def fetch(from, to), do: fetch(station(), from, to)
 
   @doc """
+    人が書きやすい形で日時を指定可能な関数
+  """
+  def fetch(year, month, day, from_time, to_time) do
+    date = Enum.join([year,month,day])
+    fetch(Enum.join([date, from_time]), Enum.join([date, to_time]))
+  end
+
+  @doc """
     RadikoのAPIをリクエストしてXMLを返す
   """
   def fetch(station, from, to), do: HTTPoison.get!(target(station, from, to)).body
