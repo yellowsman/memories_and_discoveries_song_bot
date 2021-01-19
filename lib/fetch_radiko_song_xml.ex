@@ -7,7 +7,7 @@ defmodule FetchRadikoSongXml do
     Radikoの放送局を返す
     TODO: 放送局をconfigから値を読み込んで設定する
   """
-  def station(st), do: "FMT"
+  def station(), do: "FMT"
 
   @doc """
     取得期間の開始日を返す
