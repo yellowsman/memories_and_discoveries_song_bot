@@ -3,16 +3,9 @@ defmodule MemoriesAndDiscoveriesSongBot do
   Documentation for `MemoriesAndDiscoveriesSongBot`.
   """
 
-  @doc """
-  Hello world.
+  def songlist(year, month, day, from_time, to_time), do: IO.puts(FetchRadikoSongXml.fetch(year, month, day, from_time, to_time) |> ParseRadikoSongXml.parseAtristAndTitle)
+ 
+  def songlist(from, to), do: IO.puts(FetchRadikoSongXml.fetch(from, to) |> ParseRadikoSongXml.parseAtristAndTitle)
 
-  ## Examples
-
-      iex> MemoriesAndDiscoveriesSongBot.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
+  def songlist, do: IO.puts(FetchRadikoSongXml.fetch() |> ParseRadikoSongXml.parseAtristAndTitle)
 end
