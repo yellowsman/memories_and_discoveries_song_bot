@@ -6,6 +6,12 @@ defmodule ParseRadikoSongXml do
   @doc """
     XMLをパースしてアーティストと曲名のマップにする
   """
-  def parseAtristAndTitle do
+  def parseAtristAndTitle(xml) do
+      Quinn.parse(xml) |>
+      Quinn.find(:item) |>
+      Enum.map(fn item ->
+        Enum.join([item[:attr][:artist], item[:attr][:title]], ": ") |> Mojiex.convert({:ze, :he}) |> Mojiex.convert({:zs, :hs})
+      end) |>
+      Enum.join("\n")
   end
 end
