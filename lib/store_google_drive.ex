@@ -15,9 +15,7 @@ defmodule StoreGoogleDrive do
   def fetch do
   end
 
-  @doc """
-    接続情報を構築
-  """
+  #  接続情報を構築
   defp connection do
   end
 end
