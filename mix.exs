@@ -25,7 +25,7 @@ defmodule MemoriesAndDiscoveriesSongBot.MixProject do
       {:quinn, "~> 1.1.3"},
       {:mojiex, github: "enpedasi/mojiex"},
       {:tz, "~> 0.12.0"},
-      {:google_api_storage, "~> 0.19.0"},
+      {:google_api_drive, "~> 0.20"},
       {:goth, "~> 1.2.0"}
     ]
   end
