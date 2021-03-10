@@ -9,10 +9,17 @@ defmodule MemoriesAndDiscoveriesSongBot.CLI do
     |> IO.puts()
   end
 
-  defp response(date \\ []) do
+  defp response(date) do
     if Enum.empty?(date), do: today(), else: at(date)
   end
 
-  defp today, do: MemoriesAndDiscoveriesSongBot.songlist()
-  defp at(date), do: MemoriesAndDiscoveriesSongBot.songlist(date)
+  defp today do
+    {:ok, parse} = MemoriesAndDiscoveriesSongBot.songlist()
+    parse
+  end
+
+  defp at(date) do
+    {:ok, parse} = MemoriesAndDiscoveriesSongBot.songlist(date)
+    parse
+  end
 end
